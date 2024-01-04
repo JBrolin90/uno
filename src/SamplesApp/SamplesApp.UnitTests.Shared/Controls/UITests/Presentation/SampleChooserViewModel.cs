@@ -35,6 +35,7 @@ using SamplesApp;
 using Uno.UI.Extensions;
 using Microsoft.UI.Dispatching;
 using Private.Infrastructure;
+using Uno.UI.RuntimeTests;
 using System.Reflection.Metadata;
 
 namespace SampleControl.Presentation
@@ -526,7 +527,7 @@ namespace SampleControl.Presentation
 				await OpenRuntimeTests(ct);
 
 				if (ContentPhone is FrameworkElement fe
-					&& fe.FindName("UnitTestsRootControl") is Uno.UI.Samples.Tests.UnitTestsControl unitTests)
+					&& fe.FindName("UnitTestsRootControl") is UnitTestsControl unitTests)
 				{
 #if IS_CI
 					// Used to disable showing the test output visually
