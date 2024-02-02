@@ -5,18 +5,49 @@
 
 	<ItemGroup Condition=" !$(IsWinAppSdk) ">
 		<!-- Include all images by default - matches the __WindowsAppSdkDefaultImageIncludes property in the WindowsAppSDK -->
-		<Content Include="$(AssetsFolder)**;**/*.png;**/*.bmp;**/*.jpg;**/*.dds;**/*.tif;**/*.tga;**/*.gif" 
-			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);**\*.svg"
+
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '$(AssetsFolder)', '**'))" 
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);**\*.svg;@(Content)"
 			IsDefaultItem="true"
 			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
-		<Page Include="**\*.xaml" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)"
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.png'))"
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Content)"
+			IsDefaultItem="true"
+			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.bmp'))"
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Content)"
+			IsDefaultItem="true"
+			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.jpg'))"
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Content)"
+			IsDefaultItem="true"
+			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.dds'))"
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Content)"
+			IsDefaultItem="true"
+			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.tif'))"
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Content)"
+			IsDefaultItem="true"
+			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.tga'))"
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Content)"
+			IsDefaultItem="true"
+			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
+		<Content Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.gif'))"
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Content)"
+			IsDefaultItem="true"
+			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
+		<Page Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.xaml'))" 
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)"
 			IsDefaultItem="true"
 			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
 		<Compile Update="**\*.xaml.cs"
 			DependentUpon="%(Filename)"
 			IsDefaultItem="true"
 			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
-		<PRIResource Include="**\*.resw" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)"
+		<PRIResource Include="$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '**', '*.resw'))" 
+			Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)"
 			IsDefaultItem="true"
 			Link="$([MSBuild]::MakeRelative ('$(MSBuildProjectDirectory)', '%(Identity)'))" />
 	</ItemGroup>
