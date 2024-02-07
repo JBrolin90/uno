@@ -11,7 +11,9 @@
 
 		<UnoRuntimeIdentifier>Skia</UnoRuntimeIdentifier>
 		<PlatformItemsBasePath>.\</PlatformItemsBasePath>
-		<DefineConstants>$(DefineConstants);IS_RUNTIME_UI_TESTS;HAS_UNO_DEVSERVER</DefineConstants>
+		<DefineConstants>$(DefineConstants);IS_RUNTIME_UI_TESTS;HAS_UNO_DEVSERVER;</DefineConstants>
+		<!-- Temp Ignore IDE0055 for runtime test engine --> 
+		<DefineConstants>$(DefineConstants);IDE0055</DefineConstants>
 		<NoWarn>$(NoWarn);CS1998</NoWarn>
 	</PropertyGroup>
 	
