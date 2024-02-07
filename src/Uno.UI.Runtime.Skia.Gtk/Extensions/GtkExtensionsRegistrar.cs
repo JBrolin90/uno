@@ -16,7 +16,7 @@ using Uno.UI.Xaml.Controls;
 using Uno.UI.Xaml.Controls.Extensions;
 using Windows.Storage.Pickers;
 using Windows.System.Profile.Internal;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 #pragma warning disable CS0649
 namespace Uno.UI.Runtime.Skia.Gtk.Extensions;
 

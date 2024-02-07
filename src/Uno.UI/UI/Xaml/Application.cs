@@ -11,7 +11,7 @@ using Uno.Helpers.Theming;
 using Windows.UI.ViewManagement;
 using Uno.Extensions;
 using Uno.Foundation.Logging;
-using Microsoft.UI.Xaml.Data;
+using Windows.UI.Xaml.Data;
 using Uno.Foundation.Extensibility;
 using Windows.UI.Popups.Internal;
 using Windows.UI.Popups;
@@ -32,7 +32,7 @@ using ViewGroup = Android.Views.ViewGroup;
 using Font = Android.Graphics.Typeface;
 using Android.Graphics;
 using DependencyObject = System.Object;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 #elif __IOS__
 using View = UIKit.UIView;
 using ViewGroup = UIKit.UIView;
@@ -43,11 +43,11 @@ using ViewGroup = AppKit.NSView;
 using AppKit;
 using Windows.UI.Core;
 #else
-using View = Microsoft.UI.Xaml.UIElement;
-using ViewGroup = Microsoft.UI.Xaml.UIElement;
+using View = Windows.UI.Xaml.UIElement;
+using ViewGroup = Windows.UI.Xaml.UIElement;
 #endif
 
-namespace Microsoft.UI.Xaml
+namespace Windows.UI.Xaml
 {
 	/// <summary>
 	/// Encapsulates the app and its available services.
@@ -64,7 +64,7 @@ namespace Microsoft.UI.Xaml
 		{
 			ApiInformation.RegisterAssembly(typeof(Application).Assembly);
 			ApiInformation.RegisterAssembly(typeof(Windows.Storage.ApplicationData).Assembly);
-			ApiInformation.RegisterAssembly(typeof(Microsoft.UI.Composition.Compositor).Assembly);
+			ApiInformation.RegisterAssembly(typeof(Windows.UI.Composition.Compositor).Assembly);
 
 			Uno.Helpers.DispatcherTimerProxy.SetDispatcherTimerGetter(() => new DispatcherTimer());
 			Uno.Helpers.VisualTreeHelperProxy.SetCloseAllFlyoutsAction(() =>
@@ -254,7 +254,7 @@ namespace Microsoft.UI.Xaml
 		public void Exit() => CoreApplication.Exit();
 #endif
 
-		public static void Start(global::Microsoft.UI.Xaml.ApplicationInitializationCallback callback)
+		public static void Start(global::Windows.UI.Xaml.ApplicationInitializationCallback callback)
 		{
 			StartPartial(callback);
 		}
@@ -272,7 +272,7 @@ namespace Microsoft.UI.Xaml
 			_initializationComplete = true;
 
 #if !HAS_UNO_WINUI
-			Microsoft.UI.Xaml.Window.EnsureWindowCurrent();
+			Windows.UI.Xaml.Window.EnsureWindowCurrent();
 #endif
 
 			// Initialize all windows that have been created before the application was initialized.

@@ -5,7 +5,7 @@ using System;
 using System.Globalization;
 using DateTime = System.DateTimeOffset;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	partial class CalendarView
 	{

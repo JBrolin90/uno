@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using Windows.Foundation;
-using Microsoft.UI.Xaml;
+using Windows.UI.Xaml;
 using Uno.UI;
 
-namespace Microsoft.UI.Xaml.Shapes;
+namespace Windows.UI.Xaml.Shapes;
 
 internal partial class BorderLayerRenderer
 {

@@ -8,9 +8,9 @@ using Uno.Foundation.Logging;
 using Uno.Extensions;
 using Uno.UI.DataBinding;
 using Uno.UI;
-using Microsoft.UI.Xaml.Data;
+using Windows.UI.Xaml.Data;
 using System.Collections.Generic;
-using Microsoft.UI.Xaml;
+using Windows.UI.Xaml;
 using System.Globalization;
 using System.Threading;
 using Uno.Diagnostics.Eventing;
@@ -25,7 +25,7 @@ using Uno.UI.Controls;
 using UIKit;
 #endif
 
-namespace Microsoft.UI.Xaml
+namespace Windows.UI.Xaml
 {
 	public partial class DependencyObjectStore
 	{
@@ -368,7 +368,7 @@ namespace Microsoft.UI.Xaml
 			}
 			else
 			{
-				throw new NotSupportedException("Only Microsoft.UI.Xaml.Data.Binding is supported for bindings.");
+				throw new NotSupportedException("Only Windows.UI.Xaml.Data.Binding is supported for bindings.");
 			}
 		}
 
@@ -397,7 +397,7 @@ namespace Microsoft.UI.Xaml
 				throw new ArgumentNullException(nameof(binding));
 			}
 
-			var fullBinding = binding as Microsoft.UI.Xaml.Data.Binding;
+			var fullBinding = binding as Windows.UI.Xaml.Data.Binding;
 
 			if (fullBinding != null)
 			{
@@ -411,7 +411,7 @@ namespace Microsoft.UI.Xaml
 			}
 			else
 			{
-				throw new NotSupportedException("Only Microsoft.UI.Xaml.Data.Binding is supported for bindings.");
+				throw new NotSupportedException("Only Windows.UI.Xaml.Data.Binding is supported for bindings.");
 			}
 		}
 
@@ -511,11 +511,11 @@ namespace Microsoft.UI.Xaml
 
 			if (dependencyObject != null)
 			{
-				var dp = Microsoft.UI.Xaml.DependencyProperty.GetProperty(dependencyObject.GetType(), propertyName);
+				var dp = Windows.UI.Xaml.DependencyProperty.GetProperty(dependencyObject.GetType(), propertyName);
 
 				if (dp != null)
 				{
-					return Microsoft.UI.Xaml.DependencyObjectExtensions
+					return Windows.UI.Xaml.DependencyObjectExtensions
 						.RegisterDisposablePropertyChangedCallback(dependencyObject, dp, newValueAction.NewValue);
 				}
 				else
@@ -595,7 +595,7 @@ namespace Microsoft.UI.Xaml
 		public BindingExpression GetBindingExpression(DependencyProperty dependencyProperty)
 			=> _properties.GetBindingExpression(dependencyProperty);
 
-		public Microsoft.UI.Xaml.Data.Binding? GetBinding(DependencyProperty dependencyProperty)
+		public Windows.UI.Xaml.Data.Binding? GetBinding(DependencyProperty dependencyProperty)
 			=> GetBindingExpression(dependencyProperty)?.ParentBinding;
 
 		/// <summary>

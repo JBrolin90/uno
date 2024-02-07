@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Private.Infrastructure;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 using System.Linq;
 #if !HAS_UNO_WINUI
 using Microsoft/* UWP don't rename */.UI.Xaml.Controls;

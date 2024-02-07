@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Uno.Disposables;
 using Uno.Extensions;
 using Uno.UI.Xaml;
@@ -13,7 +13,7 @@ using Uno.UI.Helpers;
 using Uno.UI.Extensions;
 using Windows.Foundation;
 
-namespace Microsoft.UI.Xaml.Shapes
+namespace Windows.UI.Xaml.Shapes
 {
 	partial class BorderLayerRenderer
 	{

@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 using Uno.Extensions;
 using Uno;
 using Uno.Foundation.Logging;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 using Windows.Foundation;
-using View = Microsoft.UI.Xaml.UIElement;
+using View = Windows.UI.Xaml.UIElement;
 using System.Collections;
 using System.Runtime.CompilerServices;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Media;
 using Uno.UI;
 using Uno.UI.Xaml;
 using Windows.UI;
 using System.Dynamic;
-using Microsoft.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Shapes;
 
-namespace Microsoft.UI.Xaml
+namespace Windows.UI.Xaml
 {
 	public partial class FrameworkElement : IEnumerable
 	{
@@ -224,7 +224,7 @@ namespace Microsoft.UI.Xaml
 		{
 			if (FrameworkElementHelper.IsUiAutomationMappingEnabled)
 			{
-				Microsoft.UI.Xaml.Automation.AutomationProperties.SetAutomationId(this, newValue);
+				Windows.UI.Xaml.Automation.AutomationProperties.SetAutomationId(this, newValue);
 			}
 
 			if (FeatureConfiguration.UIElement.AssignDOMXamlName)

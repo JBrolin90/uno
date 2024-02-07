@@ -14,11 +14,11 @@ using Uno.Extensions;
 using Uno.UI;
 using Uno.UI.Controls;
 using Windows.UI.Core;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Rect = Windows.Foundation.Rect;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	partial class BorderLayerRenderer
 	{

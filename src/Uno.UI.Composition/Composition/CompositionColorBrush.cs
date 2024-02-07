@@ -3,7 +3,7 @@
 using System;
 using Windows.UI;
 
-namespace Microsoft.UI.Composition
+namespace Windows.UI.Composition
 {
 	public partial class CompositionColorBrush : CompositionBrush
 	{

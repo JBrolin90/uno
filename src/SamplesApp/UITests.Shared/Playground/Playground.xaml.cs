@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Markup;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Markup;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 using MUXControlsTestApp;
 using Uno.UI.Samples.Controls;
 using Windows.Foundation;
@@ -40,7 +40,7 @@ public sealed partial class Playground : UserControl
 		var ns = new[] {
 				("behaviors", "using:Uno.UI.Demo.Behaviors"),
 				("utu", "using:Uno.Toolkit.UI"),
-				("muxc", "using:Microsoft.UI.Xaml.Controls"),
+				("muxc", "using:Windows.UI.Xaml.Controls"),
 				("um", "using:Uno.Material.Extensions"),
 				("mtuc", "using:Microsoft.Toolkit.Uwp.UI.Controls"),
 				("mtud", "using:Microsoft.Toolkit.Uwp.DeveloperTools"),

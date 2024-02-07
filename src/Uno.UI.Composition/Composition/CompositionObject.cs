@@ -8,7 +8,7 @@ using Windows.Foundation.Metadata;
 using Windows.UI;
 using Windows.UI.Core;
 
-namespace Microsoft.UI.Composition
+namespace Windows.UI.Composition
 {
 	public partial class CompositionObject : IDisposable
 	{

@@ -2,13 +2,13 @@
 using Uno.UI.Samples.Controls;
 using Windows.Storage;
 using Windows.Storage.Pickers;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace UITests.Windows_UI_Xaml_Media_Imaging;
 
-[Sample("Microsoft.UI.Xaml.Media", IsManualTest = true)]
+[Sample("Windows.UI.Xaml.Media", IsManualTest = true)]
 public sealed partial class PickImageFromFile : Page
 {
 	public PickImageFromFile()

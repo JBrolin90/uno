@@ -4,14 +4,14 @@ using System.Text;
 using Uno.Extensions;
 using Uno.Foundation.Logging;
 using Uno.UI.DataBinding;
-using Microsoft.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Animation;
 using System.Collections;
 using System.Linq;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Markup;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Markup;
 using Windows.Foundation;
 using Uno.UI;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Text;
 using Uno.UI.Xaml;
 
@@ -33,11 +33,11 @@ using ViewGroup = AppKit.NSView;
 using Color = AppKit.NSColor;
 using Font = AppKit.NSFont;
 #elif UNO_REFERENCE_API || IS_UNIT_TESTS
-using View = Microsoft.UI.Xaml.UIElement;
-using ViewGroup = Microsoft.UI.Xaml.UIElement;
+using View = Windows.UI.Xaml.UIElement;
+using ViewGroup = Windows.UI.Xaml.UIElement;
 #endif
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	[ContentProperty(Name = "Content")]
 	public partial class ContentPresenter : FrameworkElement, IFrameworkTemplatePoolAware

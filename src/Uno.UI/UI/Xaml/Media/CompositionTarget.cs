@@ -1,5 +1,5 @@
-using Microsoft.UI.Composition;
-namespace Microsoft.UI.Xaml.Media;
+﻿using Windows.UI.Composition;
+namespace Windows.UI.Xaml.Media;
 
 public partial class CompositionTarget
 {

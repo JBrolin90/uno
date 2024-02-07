@@ -8,15 +8,15 @@ using System.Text;
 using System.Collections;
 using Uno.UI.DataBinding;
 using Uno.Disposables;
-using Microsoft.UI.Xaml.Data;
+using Windows.UI.Xaml.Data;
 using System.Runtime.CompilerServices;
 using System.Drawing;
 using Uno.UI;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Media;
 
-using Microsoft.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Shapes;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	public partial class Panel
 	{

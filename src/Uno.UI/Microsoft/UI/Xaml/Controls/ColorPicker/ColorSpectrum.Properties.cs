@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 using Windows.UI;
-using Microsoft.UI.Xaml;
+using Windows.UI.Xaml;
 
 namespace Microsoft/* UWP don't rename */.UI.Xaml.Controls.Primitives
 {

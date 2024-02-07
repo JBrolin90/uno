@@ -5,7 +5,7 @@ using Windows.Foundation;
 using DateTime = System.DateTimeOffset;
 using NotImplementedException = System.NotImplementedException;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	public partial class CalendarViewDayItemChangingEventArgs
 	{

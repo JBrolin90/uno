@@ -4,7 +4,7 @@ using System;
 using System.Numerics;
 using Windows.UI;
 
-namespace Microsoft.UI.Composition
+namespace Windows.UI.Composition
 {
 	public partial class Compositor : global::System.IDisposable
 	{

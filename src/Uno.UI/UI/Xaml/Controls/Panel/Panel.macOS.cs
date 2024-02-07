@@ -1,17 +1,17 @@
 ﻿using System;
-using Microsoft.UI.Xaml;
+using Windows.UI.Xaml;
 using Uno.Extensions;
 using Uno.Foundation.Logging;
 using Uno.Disposables;
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 using Uno.UI.Controls;
-using Microsoft.UI.Xaml.Shapes;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Media;
 
 using CoreGraphics;
 using AppKit;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	public partial class Panel
 	{

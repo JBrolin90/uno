@@ -12,7 +12,7 @@ using System.Threading;
 using Uno.Collections;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
-using Microsoft.UI.Xaml.Data;
+using Windows.UI.Xaml.Data;
 using Uno.UI;
 using System.Collections;
 
@@ -22,7 +22,7 @@ using View = Android.Views.View;
 using View = UIKit.UIView;
 #endif
 
-namespace Microsoft.UI.Xaml
+namespace Windows.UI.Xaml
 {
 	public partial class DependencyObjectStore : IDisposable
 	{

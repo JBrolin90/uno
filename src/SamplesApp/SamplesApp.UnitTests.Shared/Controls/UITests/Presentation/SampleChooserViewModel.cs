@@ -14,7 +14,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Globalization;
 using Windows.UI.Core;
 using Windows.Storage;
-using Microsoft.UI.Xaml;
+using Windows.UI.Xaml;
 using System.IO;
 using Windows.UI.Popups;
 using Uno.Extensions;
@@ -28,7 +28,7 @@ using Microsoft.Extensions.Logging;
 using Uno.Logging;
 #endif
 
-using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls;
 using Windows.Graphics.Imaging;
 using Windows.Graphics.Display;
 using SamplesApp;
@@ -77,8 +77,8 @@ namespace SampleControl.Presentation
 
 		private Section _lastSection = Section.Library;
 		private readonly Stack<Section> _previousSections = new Stack<Section>();
-		private static readonly Microsoft.UI.Xaml.Media.SolidColorBrush _screenshotBackground =
-	new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.White);
+		private static readonly Windows.UI.Xaml.Media.SolidColorBrush _screenshotBackground =
+	new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.White);
 
 		private readonly UnitTestDispatcherCompat _dispatcher;
 
@@ -108,7 +108,7 @@ namespace SampleControl.Presentation
 
 #if HAS_UNO
 			// Disable all pooling so that controls get collected quickly.
-			Microsoft.UI.Xaml.FrameworkTemplatePool.IsPoolingEnabled = false;
+			Windows.UI.Xaml.FrameworkTemplatePool.IsPoolingEnabled = false;
 #endif
 #if WINAPPSDK
 			UseFluentStyles = true;
@@ -362,7 +362,7 @@ namespace SampleControl.Presentation
 					_log.Debug($"Generating tests for {tests.Length} test in {folderName}");
 				}
 
-				var target = new Microsoft.UI.Xaml.Media.Imaging.RenderTargetBitmap();
+				var target = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
 
 				for (int i = 0; i < tests.Length; i++)
 				{
@@ -1219,7 +1219,7 @@ namespace SampleControl.Presentation
 			async
 #endif
 			Task GenerateBitmap(CancellationToken ct
-			, Microsoft.UI.Xaml.Media.Imaging.RenderTargetBitmap targetBitmap
+			, Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap targetBitmap
 			, StorageFile file
 			, FrameworkElement content
 			, (double MinWidth, double MinHeight, double Width, double Height) constraints)
@@ -1254,7 +1254,7 @@ namespace SampleControl.Presentation
 				element.Arrange(new Windows.Foundation.Rect(0, 0, constraints.Width, constraints.Height));
 
 				await Task.Yield();
-				targetBitmap = new Microsoft.UI.Xaml.Media.Imaging.RenderTargetBitmap();
+				targetBitmap = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
 
 				await targetBitmap.RenderAsync(element).AsTask(ct);
 

@@ -4,7 +4,7 @@ using System.Numerics;
 using Uno.Extensions;
 using Uno.UI.Composition;
 
-namespace Microsoft.UI.Composition
+namespace Windows.UI.Composition
 {
 	public partial class Visual : CompositionObject, I3DTransformableObject
 	{
@@ -19,7 +19,7 @@ namespace Microsoft.UI.Composition
 		private bool _isVisible = true;
 		private float _opacity = 1.0f;
 		private CompositionCompositeMode _compositeMode;
-		private object? _compositionTarget; // this should be a Microsoft.UI.Xaml.Media.CompositionTarget
+		private object? _compositionTarget; // this should be a Windows.UI.Xaml.Media.CompositionTarget
 
 		internal Visual(Compositor compositor) : base(compositor)
 		{

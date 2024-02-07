@@ -5,9 +5,9 @@ using Uno.UI;
 using Uno.UI.Views.Controls;
 using Uno.UI.DataBinding;
 using UIKit;
-using Microsoft.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Shapes;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	/// <summary>
 	/// Declares a Content presenter

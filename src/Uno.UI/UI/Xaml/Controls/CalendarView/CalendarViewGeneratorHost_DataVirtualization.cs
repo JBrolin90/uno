@@ -9,7 +9,7 @@ using Windows.UI.Core;
 using DirectUI;
 using DateTime = System.DateTimeOffset;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	partial class CalendarViewGeneratorHost : IVector<object>
 	{

@@ -7,20 +7,20 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Uno.Disposables;
 using Uno.Extensions;
-using Microsoft.UI.Xaml.Documents;
-using Microsoft.UI.Xaml;
+using Windows.UI.Xaml.Documents;
+using Windows.UI.Xaml;
 using Uno.UI.DataBinding;
 using System;
 using Uno.UI;
 using System.Collections;
 using System.Diagnostics;
-using Microsoft.UI.Xaml.Markup;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Markup;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Text;
 using Windows.Foundation;
 using Windows.UI.Input;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Automation.Peers;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Automation.Peers;
 using Uno;
 using Uno.Foundation.Logging;
 
@@ -31,7 +31,7 @@ using Uno.UI.Helpers;
 using UIKit;
 #endif
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	[ContentProperty(Name = nameof(Inlines))]
 	public partial class TextBlock : DependencyObject

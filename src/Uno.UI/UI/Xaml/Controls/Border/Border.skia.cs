@@ -5,17 +5,17 @@ using Uno.Extensions;
 using System.Linq;
 using System.Drawing;
 using Uno.Disposables;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Media;
 using Uno.UI;
 
-using View = Microsoft.UI.Xaml.UIElement;
+using View = Windows.UI.Xaml.UIElement;
 using Color = System.Drawing.Color;
-using Microsoft.UI.Composition;
+using Windows.UI.Composition;
 using System.Numerics;
 using Windows.Foundation;
-using Microsoft.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Shapes;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	public partial class Border
 	{

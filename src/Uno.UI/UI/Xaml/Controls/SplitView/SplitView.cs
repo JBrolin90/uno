@@ -4,13 +4,13 @@ using Uno.Disposables;
 using System.Text;
 using Uno.Extensions;
 using Windows.Foundation;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Markup;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Markup;
 using Uno.UI.DataBinding;
-using Microsoft.UI.Xaml.Input;
+using Windows.UI.Xaml.Input;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	[ContentProperty(Name = nameof(Content))]
 	public partial class SplitView : Control

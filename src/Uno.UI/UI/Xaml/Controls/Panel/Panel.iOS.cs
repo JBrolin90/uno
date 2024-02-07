@@ -1,10 +1,10 @@
 ﻿using CoreGraphics;
 using UIKit;
 using Uno.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Shapes;
 
-namespace Microsoft.UI.Xaml.Controls
+namespace Windows.UI.Xaml.Controls
 {
 	public partial class Panel
 	{

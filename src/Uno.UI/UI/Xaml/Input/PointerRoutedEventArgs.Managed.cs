@@ -6,7 +6,7 @@ using System.Threading;
 using Windows.Devices.Input;
 using Uno;
 using Windows.Foundation;
-using Microsoft.UI.Xaml.Media;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Core;
 
 #if HAS_UNO_WINUI
@@ -17,7 +17,7 @@ using Windows.UI.Input;
 using PointerDeviceType = Windows.Devices.Input.PointerDeviceType;
 #endif
 
-namespace Microsoft.UI.Xaml.Input
+namespace Windows.UI.Xaml.Input
 {
 	partial class PointerRoutedEventArgs
 	{
