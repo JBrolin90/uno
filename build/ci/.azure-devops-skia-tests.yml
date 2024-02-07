@@ -58,6 +58,17 @@ jobs:
       ArtifactName: skia-gtk-samples-app-$(XAML_FLAVOR_BUILD)
       ArtifactType: Container
 
+  - powershell: dotnet msbuild src/SamplesApp/SamplesApp.Skia.Gtk/SamplesApp.Skia.Gtk.csproj /r /m /p:Configuration=Debug /detailedsummary /m /bl:$(build.artifactstagingdirectory)\build-gtk-debug.binlog
+    displayName: Build GTK Head - Debug
+
+  - task: PublishBuildArtifacts@1
+    retryCountOnTaskFailure: 3
+    condition: and(succeeded(), eq(variables['UNO_UWP_BUILD'], 'false'))
+    inputs:
+      PathtoPublish: $(Build.SourcesDirectory)\src\SamplesApp\SamplesApp.Skia.Gtk\bin\Debug\net7.0
+      ArtifactName: skia-gtk-samples-app-debug-$(XAML_FLAVOR_BUILD)
+      ArtifactType: Container
+
   - powershell: dotnet msbuild src/SamplesApp/SamplesApp.Skia.WPF/SamplesApp.Skia.WPF.csproj /r /m /p:Configuration=Release /detailedsummary /m /bl:$(build.artifactstagingdirectory)\build-wpf.binlog
     displayName: Build WPF Head
 
@@ -225,6 +236,70 @@ jobs:
       testRunTitle: 'Skia GTK $(XAML_FLAVOR_BUILD) Runtime Tests'
       testResultsFormat: 'NUnit'
       testResultsFiles: '$(build.sourcesdirectory)/build/skia-gtk-runtime-tests-results.xml'
+      failTaskOnFailedTests: true
+
+- job: Skia_Gtk_Runtime_Tests_Hot_Reload
+  displayName: 'Run Skia GTK Runtime Tests - HotReload'
+  timeoutInMinutes: 60
+
+  pool:
+    vmImage: ${{ parameters.vmImage }}
+
+  dependsOn: Skia_Tests_Build
+
+  variables:
+    SamplesAppArtifactName: skia-gtk-samples-app-debug-WinUI
+    SamplesAppArtifactPath: $(build.sourcesdirectory)/build/$(SamplesAppArtifactName)
+    UnoEnableHRuntimeTests: true
+
+    CI_Build: true
+
+    # Only build for NetPrevious
+    UnoDisableNetCurrentMobile: true
+    UnoDisableNetCurrent: true
+
+    UNO_UWP_BUILD: ${{ parameters.UNO_UWP_BUILD }}
+    XAML_FLAVOR_BUILD: ${{ parameters.XAML_FLAVOR_BUILD }}
+
+  steps:
+
+  - task: DownloadBuildArtifacts@0
+    inputs:
+        artifactName: $(SamplesAppArtifactName)
+        downloadPath: '$(build.sourcesdirectory)/build'
+
+  - template: templates/dotnet-install.yml
+  - template: templates/gtk-install-windows.yml
+
+  - script: |
+      # Build source generators for hot reload runtime tests
+      # Used to build the hot reload test secondary app during runtime tests
+      cd $(build.sourcesdirectory)/src/SourceGenerators/Uno.UI.Tasks
+      dotnet build -c Debug
+      cd $(build.sourcesdirectory)/src/SourceGenerators/Uno.UI.SourceGenerators
+      dotnet build -c Debug
+      cd $(build.sourcesdirectory)/src/Uno.UI.RemoteControl.Host
+      dotnet build -c Debug -p:UnoDisableNet8=true
+    displayName: Build HR dependencies
+
+  - script: |
+        cd $(SamplesAppArtifactPath)
+        dotnet SamplesApp.Skia.Gtk.dll
+
+    displayName: Run Skia GTK $(XAML_FLAVOR_BUILD) Runtime Tests - Hot Reload
+    env:
+      UnoEnableHRuntimeTests: $(UnoEnableHRuntimeTests)
+      SamplesAppArtifactPath: $(SamplesAppArtifactPath)
+      SamplesAppArtifactName: $(SamplesAppArtifactName)
+      UNO_RUNTIME_TESTS_RUN_TESTS: '{ Filter: { Value: "Uno.UI.RuntimeTests.Tests.HotReload" }}'
+      UNO_RUNTIME_TESTS_OUTPUT_PATH: '$(build.sourcesdirectory)/build/skia-gtk-runtime-tests-hot-reload-results.xml'
+
+  - task: PublishTestResults@2
+    condition: always()
+    inputs:
+      testRunTitle: 'Skia GTK $(XAML_FLAVOR_BUILD) Runtime Tests - Hot Reload'
+      testResultsFormat: 'NUnit'
+      testResultsFiles: '$(build.sourcesdirectory)/build/skia-gtk-runtime-tests-hot-reload-results.xml'
       failTaskOnFailedTests: true
 
 ##
