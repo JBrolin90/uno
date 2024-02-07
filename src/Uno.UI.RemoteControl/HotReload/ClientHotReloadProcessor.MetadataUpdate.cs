@@ -13,11 +13,12 @@ using Uno.Extensions;
 using Uno.Foundation.Logging;
 using Uno.UI.Helpers;
 using Uno.UI.RemoteControl.HotReload.MetadataUpdater;
-#if !WINUI
-using Windows.System;
-using DispatcherQueuePriority = Microsoft.UI.Dispatching.DispatcherQueuePriority;
-#else
+#if HAS_UNO_WINUI || WINDOWS_WINUI
 using Microsoft.UI.Dispatching;
+using _Priority = Microsoft.UI.Dispatching.DispatcherQueuePriority;
+#else
+using Windows.System;
+using _Priority = Windows.UI.Core.CoreDispatcherPriority;
 #endif
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -175,7 +176,7 @@ partial class ClientHotReloadProcessor
 
 			// Wait for the tree to be layouted before restoring state
 			var tcs = new TaskCompletionSource();
-			CurrentWindow?.DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Low, () => tcs.TrySetResult());
+			CurrentWindow?.DispatcherQueue.TryEnqueue(_Priority.Low, () => tcs.TrySetResult());
 			await tcs.Task;
 
 			isCapturingState = false;
